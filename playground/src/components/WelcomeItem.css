@@ -1,0 +1,78 @@
+.item {
+  margin-top: 2rem;
+  display: flex;
+  position: relative;
+}
+
+.item .details {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.item i {
+  display: flex;
+  place-items: center;
+  place-content: center;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  border-radius: 8px;
+}
+
+.item h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--color-heading);
+}
+
+/* 单列布局：连接线从图标方块底部出发，穿过 margin 间隙连到下一个方块顶部 */
+.item:after {
+  content: ' ';
+  border-left: 1px solid var(--color-border);
+  position: absolute;
+  left: 25px;
+  top: 50px;
+  height: calc(100% - 50px + 2rem);
+}
+
+.item:last-of-type:after {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .item {
+    margin-top: 0;
+    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  }
+
+  .item i {
+    top: calc(50% - 25px);
+    left: -26px;
+    position: absolute;
+  }
+
+  /* 双列布局：方块垂直居中，连接线改为方块上下两段（左缘对齐方块中线） */
+  .item:before {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: absolute;
+    left: 0;
+    bottom: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
+
+  .item:after {
+    left: 0;
+    top: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
+
+  .item:first-of-type:before {
+    display: none;
+  }
+}

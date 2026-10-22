@@ -1,0 +1,8 @@
+.notfound {
+  text-align: center;
+}
+
+.notfound h1 {
+  font-size: 4rem;
+  color: hsla(160, 100%, 37%, 1);
+}

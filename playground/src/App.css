@@ -1,0 +1,65 @@
+/* App 根节点；display: contents 让 header 与 RouterView 成为 #app 的直接 grid 项 */
+.app-shell {
+  display: contents;
+}
+
+.app-shell header {
+  line-height: 1.5;
+  max-height: 100vh;
+}
+
+.app-shell .logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+.app-shell nav {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.app-shell nav a.router-link-active {
+  color: var(--color-text);
+}
+
+.app-shell nav a.router-link-active:hover {
+  background-color: transparent;
+}
+
+.app-shell nav a {
+  display: inline-block;
+  padding: 0 1rem;
+  border-left: 1px solid var(--color-border);
+}
+
+.app-shell nav a:first-of-type {
+  border: 0;
+}
+
+@media (min-width: 1024px) {
+  .app-shell header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
+
+  .app-shell .logo {
+    margin: 0 2rem 0 0;
+  }
+
+  .app-shell header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .app-shell nav {
+    text-align: left;
+    margin-left: -1rem;
+    font-size: 1rem;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
+}

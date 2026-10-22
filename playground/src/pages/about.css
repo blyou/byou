@@ -1,0 +1,39 @@
+.about {
+  text-align: center;
+}
+
+.about .about-count {
+  display: block;
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: hsla(160, 100%, 37%, 1);
+}
+
+/* 沿用切换为 by-button 组件前的 about 页按钮外观（选择器比组件作用域样式更具体） */
+.about .about-panel button.by-button {
+  height: auto;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid hsla(160, 100%, 37%, 1);
+  border-radius: 8px;
+  background: transparent;
+  color: hsla(160, 100%, 37%, 1);
+  font-size: 1rem;
+  transition: 0.4s;
+}
+
+.about .about-panel button.by-button:hover {
+  background-color: hsla(160, 100%, 37%, 0.2);
+}
+
+@media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .about .about-panel {
+    flex: 1;
+  }
+}
